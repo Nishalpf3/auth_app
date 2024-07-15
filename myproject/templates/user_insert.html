@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%block title%}Insert User{%endblock%}
+{% block content %}
+<div class="container justify-content-center mt-5" style="width:fit-content;background-color: rgb(152, 152, 152);" >
+<form action="" method="POST">
+    {%csrf_token%}
+    <h1 class="text-center" style="color:#007bff ;">Manage Users!</h1>
+    <div class="form-group">
+      <label for="exampleInputname" style="color: black;font-weight:bold;">Username</label><br>
+      {{form.username}}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputname" style="color: black;font-weight:bold;">Email</label><br>
+        {{form.email}}
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1" style="color: black;font-weight:bold;">Password</label><br>
+      {{form.password1}}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1" style="color: black;font-weight:bold;">Re-Enter Password</label><br>
+        {{form.password2}}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update!</button>
+  </form>
+  {{form.erros}}
+
+
+
+{% endblock %}
